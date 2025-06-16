@@ -25,12 +25,6 @@ lib.ssMetadata = [];
 
 
 
-(lib._70 = function() {
-	this.initialize(img._70);
-}).prototype = p = new cjs.Bitmap();
-p.nominalBounds = new cjs.Rectangle(0,0,211,86);
-
-
 (lib.banner = function() {
 	this.initialize(img.banner);
 }).prototype = p = new cjs.Bitmap();
@@ -85,6 +79,12 @@ p.nominalBounds = new cjs.Rectangle(0,0,46,26);
 p.nominalBounds = new cjs.Rectangle(0,0,320,316);
 
 
+(lib.sd70 = function() {
+	this.initialize(img.sd70);
+}).prototype = p = new cjs.Bitmap();
+p.nominalBounds = new cjs.Rectangle(0,0,211,86);
+
+
 (lib.snk = function() {
 	this.initialize(img.snk);
 }).prototype = p = new cjs.Bitmap();
@@ -105,6 +105,28 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 	prototype.frameBounds = frameBounds;
 	return prototype;
 	}
+
+
+(lib.sd_70 = function(mode,startPosition,loop,reversed) {
+if (loop == null) { loop = true; }
+if (reversed == null) { reversed = false; }
+	var props = new Object();
+	props.mode = mode;
+	props.startPosition = startPosition;
+	props.labels = {};
+	props.loop = loop;
+	props.reversed = reversed;
+	cjs.MovieClip.apply(this,[props]);
+
+	// Layer_1
+	this.instance = new lib.sd70();
+	this.instance.setTransform(-67.7,-27.6,0.6418,0.6418);
+
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+
+	this._renderFirstFrame();
+
+}).prototype = getMCSymbolPrototype(lib.sd_70, new cjs.Rectangle(-67.7,-27.6,135.5,55.2), null);
 
 
 (lib.meng = function(mode,startPosition,loop,reversed) {
@@ -388,28 +410,6 @@ if (reversed == null) { reversed = false; }
 
 }).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(-160,-287.9,320,386.09999999999997);
-
-
-(lib._70_1 = function(mode,startPosition,loop,reversed) {
-if (loop == null) { loop = true; }
-if (reversed == null) { reversed = false; }
-	var props = new Object();
-	props.mode = mode;
-	props.startPosition = startPosition;
-	props.labels = {};
-	props.loop = loop;
-	props.reversed = reversed;
-	cjs.MovieClip.apply(this,[props]);
-
-	// Layer_1
-	this.instance = new lib._70();
-	this.instance.setTransform(-67.7,-27.6,0.6418,0.6418);
-
-	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
-
-	this._renderFirstFrame();
-
-}).prototype = getMCSymbolPrototype(lib._70_1, new cjs.Rectangle(-67.7,-27.6,135.5,55.2), null);
 
 
 (lib.orang_1 = function(mode,startPosition,loop,reversed) {
@@ -915,7 +915,7 @@ if (reversed == null) { reversed = false; }
 	this.timeline.addTween(cjs.Tween.get(this.instance).wait(49).to({_off:false},0).wait(51));
 
 	// Layer_7
-	this.instance_1 = new lib._70_1();
+	this.instance_1 = new lib.sd_70();
 	this.instance_1.setTransform(393.2,334.4,1.1892,1.1892);
 	this.instance_1.alpha = 0;
 	this.instance_1._off = true;
@@ -980,7 +980,6 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/_70.png", id:"_70"},
 		{src:"images/banner.png", id:"banner"},
 		{src:"images/BG.jpg", id:"BG"},
 		{src:"images/coin1.png", id:"coin1"},
@@ -990,6 +989,7 @@ lib.properties = {
 		{src:"images/Meng.png", id:"Meng"},
 		{src:"images/meng_tangan.png", id:"meng_tangan"},
 		{src:"images/orang.png", id:"orang"},
+		{src:"images/sd70.png", id:"sd70"},
 		{src:"images/snk.png", id:"snk"}
 	],
 	preloads: []
